@@ -1,0 +1,56 @@
+O banco de dados ja tá começado na pasta bd,
+com nome dbgulaonline; Janderson e Ian
+
+Ian criar as tabelas:
+	->tbempreendedor
+  
+Janderson criar as tabelas:
+	->tbalimentos
+	->tbpedidos_nota
+  na tbalimentos terá uma foreign key ligando a tbalimentos a tbempreendedor.
+  na tbpedidos_nota terá uma foreign key ligando a tbalimentos a tbpedidos_nota.
+
+Jenifer 
+	-> desenvolver a base para para o Back end.
+	-> Nome do Banco de Dados: bdgulaonline
+	-> Nome das Tabelas e colnunas: 
+
+	tbempreendedor(
+	idempre
+	nomeempre
+	cpf
+	fone
+	bairro
+	rua
+	numero
+	cidade
+	uf
+	cnpj
+	linksite
+	email
+	senha);
+
+	tbalimentos(
+	idali
+	idempre
+	nomeali
+	descricao
+	qtd
+	preco
+	img);
+
+	tbpedidos_nota(
+	numpedido
+	idempre
+	datahora
+	nomecli
+	fonecli
+	enderecocli
+	numerocli
+	bairrocli
+	qtdcli
+	idali
+	nomeali
+	valortotal);
+
+
