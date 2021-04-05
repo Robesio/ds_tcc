@@ -17,3 +17,28 @@ create table tbempreendedor(
     email varchar(30) not null,
     senha password(8) not null
 );
+
+create table tbalimentos(
+    idali integer primary key not null auto_increment,
+    idempre int(3) not null,
+    nomeali varchar(30) not null,
+    descricao varchar(50) not null,
+    qtd int(6) not null,
+    preco int(6) not null 
+   -- img Varbinary(max) not null 
+);
+
+create table tbali_ped(
+    idali integer(3) not null,
+    idpedido integer(3) not null,
+    nomecli varchar(20) not null,
+    fonecli varchar(14) not null,
+    enderecocli varchar(20) not null,
+    numerocli integer(4) not null,
+    bairrocli varchar(30) not null
+);
+
+create table tbpedidos_nota(
+    idpedido integer primary key auto_increment not null,
+    datahora datetime not null
+);
