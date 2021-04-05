@@ -1,18 +1,19 @@
-drop database if exists dbgulaonline;
-create database dbgulaonline;
-use dbgulaonline;
+drop database if exists bdgulaonline;
+create database bdgulaonline;
+use bdgulaonline;
+
 create table tbempreendedor(
-    idempre integer primary key auto_increment not null,
-    nomeempre varchar(50) not null,
-    cpf varchar(100) not null,
-    fone varchar(60) not null,
-    bairro varchar(200) not null,
-    rua varchar(200) not null,
-    numero varchar(40) not null,
-    cidade varchar(200) not null,
-    uf varchar(40) not null,
-    cnpj varchar(200) not null,
-    linksite varchar(200) not null,
-    email varchar(200) not null,
-    senha varchar(40) not null
+    idempre integer(5) primary key not null auto_increment,
+    nomeempre varchar(70) not null,
+    cpf varchar(11) not null unique,
+    fone varchar(11) not null,
+    bairro varchar(40) not null,
+    rua varchar(40) not null,
+    numero varchar(8) not null,
+    cidade varchar(30) not null,
+    uf varchar(2) not null,
+    cnpj varchar(18),
+    linksite varchar(40) not null,
+    email varchar(30) not null,
+    senha password(8) not null
 );
