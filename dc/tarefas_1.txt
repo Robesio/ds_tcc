@@ -6,9 +6,11 @@ Ian criar as tabelas:
   
 Janderson criar as tabelas:
 	->tbalimentos
+	->tbali_ped
 	->tbpedidos_nota
-  na tbalimentos terá uma foreign key ligando a tbalimentos a tbempreendedor.
-  na tbpedidos_nota terá uma foreign key ligando a tbalimentos a tbpedidos_nota.
+  na tbalimentos terá uma foreign key ligando a tbalimentos a tbempreendedor
+  na tbali_ped terá uma foreign key ligando a tbalimentos 
+  na tbali_ped terá uma foreign key ligando a tbpedidos_nota. 
 
 Jenifer 
 	-> desenvolver a base para para o Back end.
@@ -40,17 +42,16 @@ Jenifer
 	img);
 
 	tbpedidos_nota(
-	numpedido
-	idempre
-	datahora
+	idpedido
+	datahora);
+
+	tbali_ped(
+	idali
+	idpedido
 	nomecli
 	fonecli
 	enderecocli
 	numerocli
-	bairrocli
-	qtdcli
-	idali
-	nomeali
-	valortotal);
+	bairrocli);
 
 
