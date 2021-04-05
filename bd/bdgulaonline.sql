@@ -15,7 +15,7 @@ create table tbempreendedor(
     cnpj varchar(18),
     linksite varchar(40) not null,
     email varchar(30) not null,
-    senha password(8) not null
+    senha varchar(8) not null
 );
 
 create table tbalimentos(
@@ -42,3 +42,9 @@ create table tbpedidos_nota(
     idpedido integer primary key auto_increment not null,
     datahora datetime not null
 );
+
+
+CREATE VIEW vw_funcionario as
+SELECT a.idali, a.nomeali, p.nomecli, p.fonecli, p.enderecocli, p.numerocli, p.bairrocli, 
+preco * qtd AS valor_total
+FROM tbalimentos a LEFT JOIN tbali_ped p on p.id_ve = e.id_es;
