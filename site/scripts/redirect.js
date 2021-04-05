@@ -1,0 +1,1 @@
+const r_to = path => window.location.assign(path)

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Cadastrar-se</title>
+    <!-- Default metas -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Global css -->
+    <link rel="stylesheet" href="./styles/background.css">
+    <link rel="stylesheet" href="./styles/root.css">
+    <link rel="stylesheet" href="./styles/dosis.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <!-- Page css -->
+    <style>
+        main {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main form {
+            margin: 20px;
+            display: grid;
+            grid-template-columns: auto auto;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main form .option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main form .option input {
+            width: 180px;
+            height: 30px;
+            text-align: center;
+        }
+
+        main form .controllers {
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main form .controllers input {
+            width: 160px;
+            margin: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <header>
+            <div class="logo">
+                <img src="./resources/icons/prato.svg" alt="Logo">
+            </div>
+            <div class="title">cadastrar-se</div>
+            <div class="options">
+                <input type="button" value="Voltar" onclick="r_to('/')">
+            </div>
+        </header>
+
+        <main>
+            <form action="#" onsubmit="mySubmit(event)">
+                <div class="option">
+                    <p>Nome</p>
+                    <input type="text" name="iName" id="iName" placeholder="Nome">
+                </div>
+                <div class="option">
+                    <p>CPF</p>
+                    <input type="text" name="iCpf" id="iCpf" placeholder="CPF">
+                </div>
+                <div class="option">
+                    <p>Telefone</p>
+                    <input type="text" name="iPhone" id="iPhone" placeholder="Telefone">
+                </div>
+                <div class="option">
+                    <p>Bairro</p>
+                    <input type="text" name="iDistrict" id="iDistrict" placeholder="Bairro">
+                </div>
+                <div class="option">
+                    <p>Rua</p>
+                    <input type="text" name="iStreet" id="iStreet" placeholder="Rua">
+                </div>
+                <div class="option">
+                    <p>Número</p>
+                    <input type="text" name="iNumber" id="iNumber" placeholder="Número">
+                </div>
+                <div class="option">
+                    <p>Cidade</p>
+                    <input type="text" name="iCity" id="iCity" placeholder="Cidade">
+                </div>
+                <div class="option">
+                    <p>UF</p>
+                    <input type="text" name="iUf" id="iUf" placeholder="UF">
+                </div>
+                <div class="option">
+                    <p>CNPJ</p>
+                    <input type="text" name="iCnpj" id="iCnpj" placeholder="CNPJ">
+                </div>
+                <div class="option">
+                    <p>Website</p>
+                    <input type="text" name="iSite" id="iSite" placeholder="Website">
+                </div>
+                <div class="option">
+                    <p>Senha</p>
+                    <input type="password" name="iPassword" id="iPassword" placeholder="Senha">
+                </div>
+                <div class="option">
+                    <p>Confirmar Senha</p>
+                    <input type="password" name="iCPassword" id="iCPassword" placeholder="Confirmar Senha">
+                </div>
+                <div class="controllers">
+                    <input type="submit" value="Enviar">
+                </div>
+                <div class="controllers">
+                    <input type="reset" value="Limpar">
+                </div>
+            </form>
+        </main>
+
+        <footer>
+            footer
+        </footer>
+    </div>
+</body>
+
+<script src="./scripts/redirect.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    const mySubmit = e => {
+        e.preventDefault()
+        Swal.fire({
+        title: 'Como você gostaria de realizar o pagamento?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: `Mensal`,
+        denyButtonText: `Anual`,
+        cancelButtonText: `Cancelar`
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire('R$19,90', '', 'success')
+        } else if (result.isDenied) {
+            Swal.fire('R$195,50', '', 'success')
+        }
+        })
+    }
+</script>
+
+</html>

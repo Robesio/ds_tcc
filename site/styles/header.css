@@ -1,0 +1,57 @@
+header {
+    height: 100px;
+    background-color: rgba(255, 140, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    width: 180px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo img {
+    height: 90%;
+}
+
+header .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: #f0f0f0;
+    font-size: 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+header .options {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header .options input {
+    width: 150px;
+    height: 30px;
+    margin: 5px;
+    background: none;
+    border-radius: 30px;
+    border: #1b4f8f 2px solid;
+    color: #f0f0f0;
+    outline: none;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+header .options input:hover {
+    width: 180px;
+    height: 50px;
+    background: #1b4f8f;
+}
