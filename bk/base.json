@@ -1,0 +1,67 @@
+{
+	"Connection": {
+		"Headers": {
+			"Content-type": "application/json; charset=UTF-8",
+			"Access-Control-Allow-Origin": "http://localhost/",
+			"Access-Control-Allow-Methods": "GET, PUT, POST, DELETE"
+		}
+	},
+	"Database": {
+		"host": "localhost",
+		"port": "3306",
+		"dbname": "bdgulaonline",
+		"user": "root",
+		"password": ""
+	},
+	"Class": [
+		{
+			"name": "tbempreendedor",
+			"attributes": [
+				"idempre",
+				"nomeempre",
+				"cpf",
+				"fone",
+				"bairro",
+				"rua",
+				"numero",
+				"cidade",
+				"uf",
+				"cnpj",
+				"linksite",
+				"email",
+				"senha"
+			]
+		},
+		{
+			"name": "tbalimentos",
+			"attributes": [
+				"idali",
+				"idempre",
+				"nomeali",
+				"descricao",
+				"qtd",
+				"preco",
+				"img"
+			]
+		},
+		{
+			"name": "tbpedidos_nota",
+			"attributes": [
+				"idpedido",
+				"datahora"
+			]
+		},
+		{
+			"name": "tbali_ped",
+			"attributes": [
+				"idali",
+				"idpedido",
+				"nomecli",
+				"fonecli",
+				"enderecocli",
+				"numerocli",
+				"bairrocli"
+			]
+		}
+	]
+}
