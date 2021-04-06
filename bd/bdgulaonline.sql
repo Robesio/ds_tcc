@@ -45,7 +45,6 @@ create table tbali_ped(
     constraint fk_nota foreign key (idpedido) references tbpedidos_nota(idpedido)
 );
 
-
 INSERT INTO tbempreendedor VALUES
 (1,"Ricardo Vasconcelos","99059848012","1234-5678","jd pedro","Rua dos Pedregulhos","23",
 "Sao Paulo","SP","66356352000192","docesalgado.com","ricardo@gmail.com.br",md5("1")),
