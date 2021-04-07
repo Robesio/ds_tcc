@@ -8,6 +8,7 @@
 		var $enderecocli;
 		var $numerocli;
 		var $bairrocli;
+		var $datahora;
 
 		function getIdali(){
 			return $this->idali;
@@ -57,6 +58,13 @@
 		function setBairrocli($bairrocli){
 			$this->bairrocli = $bairrocli;
 		}
+
+		function getDatahora(){
+			return $this->datahora;
+		}
+		function setDatahora($datahora){
+			$this->datahora = $datahora;
+		}
 	}
 
 	class Tbali_pedDAO {
@@ -79,17 +87,26 @@
 			return $result;
 		}
 
-		function read() {
+		function readView() {
 			$result = array();
 
 			try {
-				$query = "SELECT column1, column2 FROM table_name WHERE condition";
+				$query = "SELECT * FROM vw_nota_pedido";
 
 				$con = new Connection();
 
 				$resultSet = Connection::getInstance()->query($query);
 
 				while($row = $resultSet->fetchObject()){
+					$tbali_ped = new Tbali_ped();
+					$tbali_ped->setIdali($row->idali);
+					$tbali_ped->setIdpedido($row->idpedido);
+					$tbali_ped->setNomecli($row->nomecli);
+					$tbali_ped->setFonecli($row->fonecli);
+					$tbali_ped->setEnderecocli($row->enderecocli);
+					$tbali_ped->setNumerocli($row->numerocli);
+					$tbali_ped->setBairrocli($row->bairrocli);
+					$result[] = $tbali_ped;
 				}
 
 				$con = null;

@@ -8,9 +8,9 @@
 
 		function doGet($arr){
 			$td = new Tbali_pedDAO();
-			$result = "use to result to DAO";
+			$sucess = $td->readView();
 			http_response_code(200);
-			echo json_encode($result);
+			echo json_encode($sucess);
 		}
 
 
