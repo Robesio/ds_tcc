@@ -25,48 +25,55 @@ CREATE TABLE tbtipos_logins (
   PRIMARY KEY(idti_lo)
 );
 
+CREATE TABLE tbstatus (
+  idstatus INTEGER(1) NOT NULL AUTO_INCREMENT,
+  nomestatus VARCHAR(20) NOT NULL,
+  PRIMARY KEY(idstatus)
+);
+
 CREATE TABLE tbpedido (
   idpedido INTEGER(4) NOT NULL AUTO_INCREMENT,
-  tbcadastro_id_ca INTEGER(4) NOT NULL,
+  id_ca INTEGER(4) NOT NULL,
   nomecli VARCHAR(128) NOT NULL,
   fonecli VARCHAR(14) NOT NULL,
   enderecocli VARCHAR(40) NOT NULL,
   numerocli VARCHAR(8) NOT NULL,
   bairrocli VARCHAR(30) NOT NULL,
+  datahora DATETIME NOT NULL,
+  idstatus INTEGER(1) NOT NULL,
   PRIMARY KEY(idpedido),
-  INDEX tbpedido_FKIndex1(tbcadastro_id_ca)
+  constraint fk_tbpedido foreign key (id_ca) references tbcadastro(id_ca),
+  constraint fk_tbstatus foreign key (idstatus) references tbstatus(idstatus)
 );
 
 CREATE TABLE tbalimentos (
   idali INTEGER(4) NOT NULL AUTO_INCREMENT,
-  tbcadastro_id_ca INTEGER(4) NOT NULL,
+  id_ca INTEGER(4) NOT NULL,
   nomeali VARCHAR(40) NOT NULL,
   descricao VARCHAR(50) NOT NULL,
   qtd INTEGER(8) NOT NULL,
   preco DECIMAL(8,2) NOT NULL,
   img LONGBLOB NULL,
   PRIMARY KEY(idali),
-  INDEX tbalimentos_FKIndex1(tbcadastro_id_ca)
+  constraint fk_tbalimentos foreign key (id_ca) references tbcadastro(id_ca)
 );
 
-CREATE TABLE tbalimentos_has_tbpedido (
-  tbalimentos_idali INTEGER NOT NULL,
-  tbpedido_idpedido INTEGER NOT NULL,
-  PRIMARY KEY(tbalimentos_idali, tbpedido_idpedido),
-  INDEX tbalimentos_has_tbpedido_FKIndex1(tbalimentos_idali),
-  INDEX tbalimentos_has_tbpedido_FKIndex2(tbpedido_idpedido)
+CREATE TABLE tbali_has_tbped (
+  idali INTEGER(4) NOT NULL,
+  idpedido INTEGER(4) NOT NULL,
+  qtdcli INTEGER(4) NOT NULL,
+  PRIMARY KEY(idali, idpedido),
+  constraint fk_tbinter foreign key (idali) references tbalimentos(idali),
+  constraint fk_tblig foreign key (idpedido) references tbpedido(idpedido)
 );
 
 CREATE TABLE tblogins (
-  id_lo INTEGER(8) NOT NULL AUTO_INCREMENT,
-  tbtipos_logins_idti_lo VARCHAR(5) NOT NULL,
-  tbcadastro_id_ca INTEGER(4) NOT NULL,
-  usu_id INTEGER(4) NOT NULL,
-  ti_lo VARCHAR(5) NOT NULL,
+  idti_lo INTEGER(1) NOT NULL,
+  id_ca INTEGER(4) NOT NULL,
   senha VARCHAR(8) NOT NULL,
-  PRIMARY KEY(id_lo),
-  INDEX tblogins_FKIndex1(tbcadastro_id_ca),
-  INDEX tblogins_FKIndex2(tbtipos_logins_idti_lo)
+  PRIMARY KEY(id_ca),
+  constraint fk_tblogins foreign key (id_ca) references tbcadastro(id_ca),
+  constraint fk_tblog foreign key (idti_lo) references tbtipos_logins(idti_lo)
 );
 
 INSERT INTO tbcadastro VALUES
@@ -79,16 +86,18 @@ INSERT INTO tbcadastro VALUES
 
 INSERT INTO tbtipos_logins VALUES(1,"Admin"),(2,"Comum");
 
+INSERT INTO tbstatus VALUES(1,"Realizado"),(2,"Enviado"),(3,"Entregue");
+
 INSERT INTO tbpedido VALUES
-(1,1,"Robésio","98989-8989","Rua Nova","234 B","Jardim Bom"),
-(2,1,"Robésio","98989-8989","Rua Nova","234 B","Jardim Bom"),
-(3,1,"Ian","97887-0000","Rua Amanco","333","Jardim do Café"),
-(4,2,"Ian","97887-0000","Rua Amanco","333","Jardim do Café"),
-(5,2,"Maisa","91212-1212","Rua Pedreira","444","Jardim Pedreira"),
-(6,2,"Maisa","91212-1212","Rua Pedreira","444","Jardim Pedreira"),
-(7,3,"Janderson","93333-5555","Rua Piaui","111","Jardim Novo"),
-(8,3,"Janderson","93333-5555","Rua Piaui","111","Jardim Novo"),
-(9,3,"Janderson","93333-5555","Rua Piaui","111","Jardim Novo");
+(1,1,"Robésio","98989-8989","Rua Nova","234 B","Jardim Bom",CURRENT_TIMESTAMP(),1),
+(2,1,"Robésio","98989-8989","Rua Nova","234 B","Jardim Bom",CURRENT_TIMESTAMP(),1),
+(3,1,"Ian","97887-0000","Rua Amanco","333","Jardim do Café",CURRENT_TIMESTAMP(),1),
+(4,2,"Ian","97887-0000","Rua Amanco","333","Jardim do Café",CURRENT_TIMESTAMP(),1),
+(5,2,"Maisa","91212-1212","Rua Pedreira","444","Jardim Pedreira",CURRENT_TIMESTAMP(),2),
+(6,2,"Maisa","91212-1212","Rua Pedreira","444","Jardim Pedreira",CURRENT_TIMESTAMP(),2),
+(7,3,"Janderson","93333-5555","Rua Piaui","111","Jardim Novo",CURRENT_TIMESTAMP(),3),
+(8,3,"Janderson","93333-5555","Rua Piaui","111","Jardim Novo",CURRENT_TIMESTAMP(),3),
+(9,3,"Janderson","93333-5555","Rua Piaui","111","Jardim Novo",CURRENT_TIMESTAMP(),3);
 
 INSERT INTO tbalimentos VALUES
 (1,1,"Coxinha","Frango",1,5,""),
@@ -101,14 +110,15 @@ INSERT INTO tbalimentos VALUES
 (8,3,"Marmita","Com Carne Bovina",1,30,""),
 (9,3,"Marmita","Com Ovo",1,15,"");
 
-INSERT INTO tbalimentos_has_tbpedido VALUES(1,1),(2,1),(3,1),(4,2),(5,2),(6,3);
+INSERT INTO tbali_has_tbped VALUES(1,1,2.2),(2,1,10),(3,1,20),(4,2,15),(5,2,9),(6,3,4);
 
-INSERT INTO tblogins VALUES(1,1,1,1,1,1),(2,2,2,2,2,13),(3,2,3,3,2,123);
+INSERT INTO tblogins VALUES(1,1,md5("11")),(2,2,md5("22")),(2,3,md5("33"));
+
 
 
 CREATE VIEW vw_nota_pedido as
-SELECT c.nome, c.fone, c.bairro, c.rua, c.numero, a.idali, a.nomeali, a.qtd, preco * qtd AS valor_total, p.datahora
-FROM tbalimentos a LEFT JOIN tbcadastro c on (a.idali = p.idali) LEFT JOIN tbpedido p on (p.idpedido = n.idpedido);
+SELECT  a.idali, a.nomeali, c.nome, c.fone, c.bairro, c.rua, c.numero, a.qtd, preco * qtd AS valor_total, p.datahora
+FROM tbalimentos a LEFT JOIN tbcadastro c on (a.idali = p.idali) LEFT JOIN tbpedido p on (p.idpedido = p.idpedido);
 
 --CREATE VIEW vw_nota_pedido as
 --SELECT n.idpedido, a.idali, a.nomeali, p.nomecli, p.fonecli, p.enderecocli, p.numerocli, p.bairrocli,  preco * qtd AS valor_total, n.datahora
