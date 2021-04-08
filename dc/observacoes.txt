@@ -1,6 +1,0 @@
-A tabela tbpedido não necessariamente precisaria dos campos nomecli, fonecli, enderecocli,numerocli, bairrocli
-Essas opções eu posso tá cobrando na hora do usuário fazer o cadastro deixando como NOT NULL estes campos.
-
-Sendo assim a tbpedido ficaria só com as colunas idpedido, tbcadastro_id_ca e datahora.
-
-Atenção na hora do cliente entrar com a quantidade que o mesmo deseja comprar.

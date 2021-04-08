@@ -36,7 +36,7 @@ CREATE TABLE tbpedido (
   id_ca INTEGER(4) NOT NULL,
   nomecli VARCHAR(128) NOT NULL,
   fonecli VARCHAR(14) NOT NULL,
-  enderecocli VARCHAR(40) NOT NULL,
+  ruacli VARCHAR(40) NOT NULL,
   numerocli VARCHAR(8) NOT NULL,
   bairrocli VARCHAR(30) NOT NULL,
   datahora DATETIME NOT NULL,
