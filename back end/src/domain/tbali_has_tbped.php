@@ -1,14 +1,9 @@
 <?php
 
-	class Tbali_ped {
+	class Tbali_has_tbped {
 		var $idali;
 		var $idpedido;
-		var $nomecli;
-		var $fonecli;
-		var $enderecocli;
-		var $numerocli;
-		var $bairrocli;
-		var $datahora;
+		var $qtdcli;
 
 		function getIdali(){
 			return $this->idali;
@@ -24,51 +19,16 @@
 			$this->idpedido = $idpedido;
 		}
 
-		function getNomecli(){
-			return $this->nomecli;
+		function getQtdcli(){
+			return $this->qtdcli;
 		}
-		function setNomecli($nomecli){
-			$this->nomecli = $nomecli;
-		}
-
-		function getFonecli(){
-			return $this->fonecli;
-		}
-		function setFonecli($fonecli){
-			$this->fonecli = $fonecli;
-		}
-
-		function getEnderecocli(){
-			return $this->enderecocli;
-		}
-		function setEnderecocli($enderecocli){
-			$this->enderecocli = $enderecocli;
-		}
-
-		function getNumerocli(){
-			return $this->numerocli;
-		}
-		function setNumerocli($numerocli){
-			$this->numerocli = $numerocli;
-		}
-
-		function getBairrocli(){
-			return $this->bairrocli;
-		}
-		function setBairrocli($bairrocli){
-			$this->bairrocli = $bairrocli;
-		}
-
-		function getDatahora(){
-			return $this->datahora;
-		}
-		function setDatahora($datahora){
-			$this->datahora = $datahora;
+		function setQtdcli($qtdcli){
+			$this->qtdcli = $qtdcli;
 		}
 	}
 
-	class Tbali_pedDAO {
-		function create($tbali_ped) {
+	class Tbali_has_tbpedDAO {
+		function create($tbali_has_tbped) {
 			$result = array();
 
 			try {
@@ -87,26 +47,17 @@
 			return $result;
 		}
 
-		function readView() {
+		function read() {
 			$result = array();
 
 			try {
-				$query = "SELECT * FROM vw_nota_pedido";
+				$query = "SELECT column1, column2 FROM table_name WHERE condition";
 
 				$con = new Connection();
 
 				$resultSet = Connection::getInstance()->query($query);
 
 				while($row = $resultSet->fetchObject()){
-					$tbali_ped = new Tbali_ped();
-					$tbali_ped->setIdali($row->idali);
-					$tbali_ped->setIdpedido($row->idpedido);
-					$tbali_ped->setNomecli($row->nomecli);
-					$tbali_ped->setFonecli($row->fonecli);
-					$tbali_ped->setEnderecocli($row->enderecocli);
-					$tbali_ped->setNumerocli($row->numerocli);
-					$tbali_ped->setBairrocli($row->bairrocli);
-					$result[] = $tbali_ped;
 				}
 
 				$con = null;

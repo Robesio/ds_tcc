@@ -1,21 +1,21 @@
 <?php
 
 	require("../../domain/connection.php");
-	require("../../domain/tbali_ped.php");
+	require("../../domain/tbcadastro.php");
 
-	class Tbali_pedProcess {
+	class TbcadastroProcess {
 		var $td;
 
 		function doGet($arr){
-			$td = new Tbali_pedDAO();
-			$sucess = $td->readView();
+			$td = new TbcadastroDAO();
+			$result = "use to result to DAO";
 			http_response_code(200);
-			echo json_encode($sucess);
+			echo json_encode($result);
 		}
 
 
 		function doPost($arr){
-			$td = new Tbali_pedDAO();
+			$td = new TbcadastroDAO();
 			$result = "use to result to DAO";
 			http_response_code(200);
 			echo json_encode($result);
@@ -23,7 +23,7 @@
 
 
 		function doPut($arr){
-			$td = new Tbali_pedDAO();
+			$td = new TbcadastroDAO();
 			$result = "use to result to DAO";
 			http_response_code(200);
 			echo json_encode($result);
@@ -31,7 +31,7 @@
 
 
 		function doDelete($arr){
-			$td = new Tbali_pedDAO();
+			$td = new TbcadastroDAO();
 			$result = "use to result to DAO";
 			http_response_code(200);
 			echo json_encode($result);

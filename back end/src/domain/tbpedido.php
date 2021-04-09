@@ -1,19 +1,21 @@
 <?php
 
-	class Tbalimentos {
-		var $idali;
+	class Tbpedido {
+		var $idpedido;
 		var $id_ca;
-		var $nomeali;
-		var $descricao;
-		var $qtd;
-		var $preco;
-		var $img;
+		var $nomecli;
+		var $fonecli;
+		var $ruacli;
+		var $numerocli;
+		var $bairrocli;
+		var $datahora;
+		var $idstatus;
 
-		function getIdali(){
-			return $this->idali;
+		function getIdpedido(){
+			return $this->idpedido;
 		}
-		function setIdali($idali){
-			$this->idali = $idali;
+		function setIdpedido($idpedido){
+			$this->idpedido = $idpedido;
 		}
 
 		function getId_ca(){
@@ -23,44 +25,58 @@
 			$this->id_ca = $id_ca;
 		}
 
-		function getNomeali(){
-			return $this->nomeali;
+		function getNomecli(){
+			return $this->nomecli;
 		}
-		function setNomeali($nomeali){
-			$this->nomeali = $nomeali;
-		}
-
-		function getDescricao(){
-			return $this->descricao;
-		}
-		function setDescricao($descricao){
-			$this->descricao = $descricao;
+		function setNomecli($nomecli){
+			$this->nomecli = $nomecli;
 		}
 
-		function getQtd(){
-			return $this->qtd;
+		function getFonecli(){
+			return $this->fonecli;
 		}
-		function setQtd($qtd){
-			$this->qtd = $qtd;
-		}
-
-		function getPreco(){
-			return $this->preco;
-		}
-		function setPreco($preco){
-			$this->preco = $preco;
+		function setFonecli($fonecli){
+			$this->fonecli = $fonecli;
 		}
 
-		function getImg(){
-			return $this->img;
+		function getRuacli(){
+			return $this->ruacli;
 		}
-		function setImg($img){
-			$this->img = $img;
+		function setRuacli($ruacli){
+			$this->ruacli = $ruacli;
+		}
+
+		function getNumerocli(){
+			return $this->numerocli;
+		}
+		function setNumerocli($numerocli){
+			$this->numerocli = $numerocli;
+		}
+
+		function getBairrocli(){
+			return $this->bairrocli;
+		}
+		function setBairrocli($bairrocli){
+			$this->bairrocli = $bairrocli;
+		}
+
+		function getDatahora(){
+			return $this->datahora;
+		}
+		function setDatahora($datahora){
+			$this->datahora = $datahora;
+		}
+
+		function getIdstatus(){
+			return $this->idstatus;
+		}
+		function setIdstatus($idstatus){
+			$this->idstatus = $idstatus;
 		}
 	}
 
-	class TbalimentosDAO {
-		function create($tbalimentos) {
+	class TbpedidoDAO {
+		function create($tbpedido) {
 			$result = array();
 
 			try {

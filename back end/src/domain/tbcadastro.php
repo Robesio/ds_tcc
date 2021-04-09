@@ -1,8 +1,8 @@
 <?php
 
-	class Tbempreendedor {
-		var $idempre;
-		var $nomeempre;
+	class Tbcadastro {
+		var $id_ca;
+		var $nome;
 		var $cpf;
 		var $fone;
 		var $bairro;
@@ -14,19 +14,21 @@
 		var $linksite;
 		var $email;
 		var $senha;
+		var $tipo;
+		var $nomestatus;
 
-		function getIdempre(){
-			return $this->idempre;
+		function getId_ca(){
+			return $this->id_ca;
 		}
-		function setIdempre($idempre){
-			$this->idempre = $idempre;
+		function setId_ca($id_ca){
+			$this->id_ca = $id_ca;
 		}
 
-		function getNomeempre(){
-			return $this->nomeempre;
+		function getNome(){
+			return $this->nome;
 		}
-		function setNomeempre($nomeempre){
-			$this->nomeempre = $nomeempre;
+		function setNome($nome){
+			$this->nome = $nome;
 		}
 
 		function getCpf(){
@@ -105,10 +107,24 @@
 		function setSenha($senha){
 			$this->senha = $senha;
 		}
+
+		function getTipo(){
+			return $this->tipo;
+		}
+		function setTipo($tipo){
+			$this->tipo = $tipo;
+		}
+
+		function getNomestatus(){
+			return $this->nomestatus;
+		}
+		function setNomestatus($nomestatus){
+			$this->nomestatus = $nomestatus;
+		}
 	}
 
-	class TbempreendedorDAO {
-		function create($tbempreendedor) {
+	class TbcadastroDAO {
+		function create($tbcadastro) {
 			$result = array();
 
 			try {

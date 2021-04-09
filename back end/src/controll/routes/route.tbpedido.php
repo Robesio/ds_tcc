@@ -1,10 +1,10 @@
 <?php
 
-	require("../process/process.tbempreendedor.php");
+	require("../process/process.tbpedido.php");
 
 	include("configs.php");
 
-	$tp = new TbempreendedorProcess();
+	$tp = new TbpedidoProcess();
 
 	switch($_SERVER['REQUEST_METHOD']) {
 		case "GET":

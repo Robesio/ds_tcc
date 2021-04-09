@@ -1,24 +1,24 @@
 {
-	"Connection": {
-		"Headers": {
-			"Content-type": "application/json; charset=UTF-8",
-			"Access-Control-Allow-Origin": "http://localhost/",
-			"Access-Control-Allow-Methods": "GET, PUT, POST, DELETE"
+	"Connection" : {
+		"Headers" : {
+			"Content-type" : "application/json; charset=UTF-8",
+			"Access-Control-Allow-Origin" : "http://localhost/",
+			"Access-Control-Allow-Methods" : "GET, PUT, POST, DELETE"
 		}
 	},
-	"Database": {
-		"host": "localhost",
-		"port": "3306",
-		"dbname": "bdgulaonline",
-		"user": "root",
-		"password": ""
+	"Database" : {
+		"host" : "localhost",
+		"port" : "3306",
+		"dbname" : "bdgulaonline",
+		"user" : "root",
+		"password" : ""
 	},
-	"Class": [
+	"Class" : [
 		{
-			"name": "tbempreendedor",
-			"attributes": [
-				"idempre",
-				"nomeempre",
+			"name" : "tbcadastro", 
+			"attributes" : [
+				"id_ca",
+				"nome",
 				"cpf",
 				"fone",
 				"bairro",
@@ -29,14 +29,30 @@
 				"cnpj",
 				"linksite",
 				"email",
-				"senha"
+				"senha",
+				"tipo",
+				"nomestatus"
 			]
 		},
 		{
-			"name": "tbalimentos",
-			"attributes": [
+			"name" : "tbpedido",
+			"attributes" : [
+				"idpedido",
+				"id_ca",
+				"nomecli",
+				"fonecli",
+				"ruacli",
+				"numerocli",
+				"bairrocli",
+				"datahora",
+				"idstatus"
+			]
+		},
+		{
+			"name" : "tbalimentos",
+			"attributes" : [
 				"idali",
-				"idempre",
+				"id_ca",
 				"nomeali",
 				"descricao",
 				"qtd",
@@ -45,23 +61,14 @@
 			]
 		},
 		{
-			"name": "tbpedidos_nota",
-			"attributes": [
-				"idpedido",
-				"datahora"
-			]
-		},
-		{
-			"name": "tbali_ped",
-			"attributes": [
+			"name" : "tbali_has_tbped",
+			"attributes" : [
 				"idali",
 				"idpedido",
-				"nomecli",
-				"fonecli",
-				"enderecocli",
-				"numerocli",
-				"bairrocli"
+				"qtdcli"
+				
 			]
 		}
+		
 	]
 }

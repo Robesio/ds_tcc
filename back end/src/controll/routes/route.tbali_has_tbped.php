@@ -1,10 +1,10 @@
 <?php
 
-	require("../process/process.tbali_ped.php");
+	require("../process/process.tbali_has_tbped.php");
 
 	include("configs.php");
 
-	$tp = new Tbali_pedProcess();
+	$tp = new Tbali_has_tbpedProcess();
 
 	switch($_SERVER['REQUEST_METHOD']) {
 		case "GET":
