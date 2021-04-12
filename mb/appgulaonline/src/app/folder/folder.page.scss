@@ -26,3 +26,10 @@ ion-menu-button {
 #container a {
   text-decoration: none;
 }
+
+ion-item div {
+  //border: 1px solid white;
+  text-align: center;
+  font-size: 22px;
+  --ion-background-color: #f79515;
+}

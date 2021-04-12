@@ -1,0 +1,15 @@
+tbali_has_tbped
+readAll		OK
+read		OK
+delete		OK
+updat		OK obs: tá editando por aliemento, independente do id do pedido
+create		OK
+
+tbalimentos
+readAll		OK
+read		OK
+
+delete		OK a exclusão nãotá acontecendo devido a uma tabela filho
+
+
+http://www.bosontreinamentos.com.br/

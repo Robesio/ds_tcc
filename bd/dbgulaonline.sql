@@ -5,7 +5,7 @@ USE bdgulaonline;
 CREATE TABLE tbcadastro (
   id_ca INTEGER(4) NOT NULL AUTO_INCREMENT,
   nome VARCHAR(128) NOT NULL,
-  cpf VARCHAR(14) NULL,
+  cpf VARCHAR(14) NULL UNIQUE,
   fone VARCHAR(14) NOT NULL,
   bairro VARCHAR(40) NULL,
   rua VARCHAR(40) NULL,
@@ -42,8 +42,8 @@ CREATE TABLE tbpedido (
   datahora DATETIME NOT NULL,
   idstatus INTEGER(1) NOT NULL,
   PRIMARY KEY(idpedido),
-  constraint fk_tbpedido foreign key (id_ca) references tbcadastro(id_ca),
-  constraint fk_tbstatus foreign key (idstatus) references tbstatus(idstatus)
+  constraint fk_tbpedido foreign key (id_ca) references tbcadastro(id_ca)ON DELETE CASCADE ON UPDATE CASCADE,
+  constraint fk_tbstatus foreign key (idstatus) references tbstatus(idstatus) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE tbalimentos (
@@ -55,7 +55,7 @@ CREATE TABLE tbalimentos (
   preco DECIMAL(8,2) NOT NULL,
   img LONGBLOB NULL,
   PRIMARY KEY(idali),
-  constraint fk_tbalimentos foreign key (id_ca) references tbcadastro(id_ca)
+  constraint fk_tbalimentos foreign key (id_ca) references tbcadastro(id_ca) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE tbali_has_tbped (
@@ -63,8 +63,8 @@ CREATE TABLE tbali_has_tbped (
   idpedido INTEGER(4) NOT NULL,
   qtdcli INTEGER(4) NOT NULL,
   PRIMARY KEY(idali, idpedido),
-  constraint fk_tbinter foreign key (idali) references tbalimentos(idali),
-  constraint fk_tblig foreign key (idpedido) references tbpedido(idpedido)
+  constraint fk_tbinter foreign key (idali) references tbalimentos(idali)ON DELETE CASCADE ON UPDATE CASCADE,
+  constraint fk_tblig foreign key (idpedido) references tbpedido(idpedido)ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE tblogins (
@@ -72,17 +72,17 @@ CREATE TABLE tblogins (
   id_ca INTEGER(4) NOT NULL,
   senha VARCHAR(8) NOT NULL,
   PRIMARY KEY(id_ca),
-  constraint fk_tblogins foreign key (id_ca) references tbcadastro(id_ca),
-  constraint fk_tblog foreign key (idti_lo) references tbtipos_logins(idti_lo)
+  constraint fk_tblogins foreign key (id_ca) references tbcadastro(id_ca) ON DELETE CASCADE ON UPDATE CASCADE,
+  constraint fk_tblog foreign key (idti_lo) references tbtipos_logins(idti_lo) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 INSERT INTO tbcadastro VALUES
 (1,"Ricardo Vasconcelos","99059848012","1234-5678","jd pedro","Rua dos Pedregulhos","23",
-"Sao Paulo","SP","66356352000192","docesalgado.com","ricardo@gmail.com.br",md5("1")),
+"Sao Paulo","SP","66356352000192","docesalgado.com","ricardo@gmail.com.br",md5("11")),
 (2,"Rodolfo Vasconcelos","56324164020","1256-5678","jd petrolina","Rua dos Pesqueiros","28",
-"Petrolina","PE","76386701000172","salgadobom.com","rodolfo@gmail.com.br",md5("12")),
+"Petrolina","PE","76386701000172","salgadobom.com","rodolfo@gmail.com.br",md5("22")),
 (3,"Maria Vasconcelos","51954853050","1902-5668","jd peri","Rua dos Abacateiros","89",
-"Sao Paulo","SP","14357367000171","docedoce.com","maria@gmail.com.br",md5("123"));
+"Sao Paulo","SP","14357367000171","docedoce.com","maria@gmail.com.br",md5("33"));
 
 INSERT INTO tbtipos_logins VALUES(1,"Admin"),(2,"Comum");
 
@@ -116,9 +116,9 @@ INSERT INTO tblogins VALUES(1,1,md5("11")),(2,2,md5("22")),(2,3,md5("33"));
 
 
 
-CREATE VIEW vw_nota_pedido as
-SELECT  a.idali, a.nomeali, c.nome, c.fone, c.bairro, c.rua, c.numero, a.qtd, preco * qtd AS valor_total, p.datahora
-FROM tbalimentos a LEFT JOIN tbcadastro c on (a.idali = p.idali) LEFT JOIN tbpedido p on (p.idpedido = p.idpedido);
+--CREATE VIEW vw_nota_pedido as
+--SELECT  a.idali, a.nomeali, c.nome, c.fone, c.bairro, c.rua, c.numero, a.qtd, preco * qtd AS valor_total, p.datahora
+--FROM tbalimentos a LEFT JOIN tbcadastro c on (a.idali = p.idali) LEFT JOIN tbpedido p on (p.idpedido = p.idpedido);
 
 --CREATE VIEW vw_nota_pedido as
 --SELECT n.idpedido, a.idali, a.nomeali, p.nomecli, p.fonecli, p.enderecocli, p.numerocli, p.bairrocli,  preco * qtd AS valor_total, n.datahora
