@@ -10,6 +10,7 @@ readAll		OK
 read		OK
 delete		OK 
 update		OK
+create		OK obs: falta adicionar img.
 
 inserir dados em duas tabelas do ecosystem,
 usuarios.php
