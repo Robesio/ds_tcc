@@ -10,7 +10,18 @@ readAll		OK
 read		OK
 delete		OK 
 update		OK
-create		OK obs: falta adicionar img.
+create		OK
+
+tbstatus
+readAll		OK
+read		OK
+delete		OK 
+update		OK
+
+create		OK
+
+
+
 
 inserir dados em duas tabelas do ecosystem,
 usuarios.php
