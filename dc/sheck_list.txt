@@ -17,13 +17,28 @@ readAll		OK
 read		OK
 delete		OK 
 update		OK
+create		OK
 
+tbtipos_logins
+readAll		OK
+read		OK
+delete		OK 
+update		OK
+create		OK
+
+tbpedido
+readAll		OK
+read		OK
+delete		OK 
+update		OK
+create		OK
+
+tbcadastro
+readAll		OK
+read		OK
+delete		OK
+update		OK
 create		OK
 
 
-
-
-inserir dados em duas tabelas do ecosystem,
-usuarios.php
-process.usuarios.php
 http://www.bosontreinamentos.com.br/

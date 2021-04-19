@@ -1,3 +1,6 @@
 No cadastro do alimento não ira ser preciso o input id_ca,
 pegar o id do empreendedor que está logado.
 
+Na hora de alterar as informaçoes de um usuário cadastrado, a senha não
+retorna e não adiciona criptografada.
+

@@ -15,7 +15,6 @@ CREATE TABLE tbcadastro (
   cnpj VARCHAR(18) NULL,
   linksite VARCHAR(30) NULL,
   email VARCHAR(40) NOT NULL,
-  senha VARCHAR(8) NOT NULL,
   PRIMARY KEY(id_ca)
 );
 
@@ -68,9 +67,9 @@ CREATE TABLE tbali_has_tbped (
 );
 
 CREATE TABLE tblogins (
-  idti_lo INTEGER(1) NOT NULL,
   id_ca INTEGER(4) NOT NULL,
-  senha VARCHAR(8) NOT NULL,
+  idti_lo INTEGER(1) NOT NULL,
+  senha VARCHAR(40) NOT NULL,
   PRIMARY KEY(id_ca),
   constraint fk_tblogins foreign key (id_ca) references tbcadastro(id_ca) ON DELETE CASCADE ON UPDATE CASCADE,
   constraint fk_tblog foreign key (idti_lo) references tbtipos_logins(idti_lo) ON DELETE CASCADE ON UPDATE CASCADE
@@ -78,11 +77,11 @@ CREATE TABLE tblogins (
 
 INSERT INTO tbcadastro VALUES
 (1,"Ricardo Vasconcelos","99059848012","1234-5678","jd pedro","Rua dos Pedregulhos","23",
-"Sao Paulo","SP","66356352000192","docesalgado.com","ricardo@gmail.com.br",md5("11")),
+"Sao Paulo","SP","66356352000192","docesalgado.com","ricardo@gmail.com.br"),
 (2,"Rodolfo Vasconcelos","56324164020","1256-5678","jd petrolina","Rua dos Pesqueiros","28",
-"Petrolina","PE","76386701000172","salgadobom.com","rodolfo@gmail.com.br",md5("22")),
+"Petrolina","PE","76386701000172","salgadobom.com","rodolfo@gmail.com.br"),
 (3,"Maria Vasconcelos","51954853050","1902-5668","jd peri","Rua dos Abacateiros","89",
-"Sao Paulo","SP","14357367000171","docedoce.com","maria@gmail.com.br",md5("33"));
+"Sao Paulo","SP","14357367000171","docedoce.com","maria@gmail.com.br");
 
 INSERT INTO tbtipos_logins VALUES(1,"Admin"),(2,"Comum");
 
@@ -112,7 +111,7 @@ INSERT INTO tbalimentos VALUES
 
 INSERT INTO tbali_has_tbped VALUES(1,1,2.2),(2,1,10),(3,1,20),(4,2,15),(5,2,9),(6,3,4);
 
-INSERT INTO tblogins VALUES(1,1,md5("11")),(2,2,md5("22")),(2,3,md5("33"));
+INSERT INTO tblogins VALUES(1,1,md5("11")),(2,2,md5("22")),(3,2,md5("33"));
 
 
 
