@@ -1,44 +1,27 @@
-tbali_has_tbped
-readAll		OK
-read		OK
-delete		OK
-update		OK obs: tá editando por aliemento, independente do id do pedido
-create		OK
+			BACK END						FRONT END
+tbali_has_tbped			tbalimentos			tbalimentos		OK
+readAll		OK		readAll		OK		readAll			OK
+read		OK		read		OK		create			OK Obs: tirar o campo do id do cadastrante, como ele tá logado já puxar direto
+delete		OK		delete		OK	
+update		OK 		update		OK
+create		OK		create		OK
 
-tbalimentos
-readAll		OK
-read		OK
-delete		OK 
-update		OK
-create		OK
+obs:A tbali_has_tbped tá editando por 
+alimento, independente do id do pedido 
 
-tbstatus
-readAll		OK
-read		OK
-delete		OK 
-update		OK
-create		OK
+tbstatus			tbtipos_logins
+readAll		OK		readAll		OK
+read		OK		read		OK
+delete		OK 		delete		OK
+update		OK		update		OK
+create		OK		create		OK
 
-tbtipos_logins
-readAll		OK
-read		OK
-delete		OK 
-update		OK
-create		OK
-
-tbpedido
-readAll		OK
-read		OK
-delete		OK 
-update		OK
-create		OK
-
-tbcadastro
-readAll		OK
-read		OK
-delete		OK
-update		OK
-create		OK
-
+tbpedido			tbcadastro
+readAll		OK		readAll		OK
+read		OK		read		OK
+delete		OK 		delete		OK
+update		OK		update		OK
+create		OK		create		OK
 
 http://www.bosontreinamentos.com.br/
+<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.3.27 Server at localhost Port 80</address>
