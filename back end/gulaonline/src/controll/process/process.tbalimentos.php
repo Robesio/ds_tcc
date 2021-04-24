@@ -43,7 +43,7 @@
 			$tbali->setDescricao($arr["descricao"]);
 			$tbali->setQtd($arr["qtd"]);
 			$tbali->setPreco($arr["preco"]);
-			//$tbali->setImg($arr["img"]);
+			$tbali->setImg($arr["img"]);
 			$sucess = $td->update($tbali);
 			http_response_code(200);
 			echo json_encode($sucess);

@@ -1,19 +1,19 @@
 			BACK END						FRONT END
 tbali_has_tbped			tbalimentos			tbalimentos		OK
 readAll		OK		readAll		OK		readAll			OK
-read		OK		read		OK		create			OK Obs: tirar o campo do id do cadastrante, como ele tá logado já puxar direto
-delete		OK		delete		OK	
-update		OK 		update		OK
+read		OK		read		OK		delete			OK
+delete		OK		delete		OK		update			OK Obs: problema na hora de alterar a imagem
+update		OK 		update		OK		create			OK Obs: tirar o campo do id do cadastrante, como ele tá logado já puxar direto
 create		OK		create		OK
 
-obs:A tbali_has_tbped tá editando por 
-alimento, independente do id do pedido 
-
-tbstatus			tbtipos_logins
-readAll		OK		readAll		OK
+obs:A tbali_has_tbped tá editando por 				tbcadastro
+alimento, independente do id do pedido 				read			OK
+								delete			OK
+tbstatus			tbtipos_logins			update
+readAll		OK		readAll		OK		create
 read		OK		read		OK
-delete		OK 		delete		OK
-update		OK		update		OK
+delete		OK 		delete		OK		tbstatus
+update		OK		update		OK		
 create		OK		create		OK
 
 tbpedido			tbcadastro
@@ -25,3 +25,8 @@ create		OK		create		OK
 
 http://www.bosontreinamentos.com.br/
 <address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.3.27 Server at localhost Port 80</address>
+http://opensource.locaweb.com.br/locawebstyle-v2/manual/formularios/forca-de-senha/
+
+Senha de acesso ecosystem:
+cpf 43947209070
+senha 070

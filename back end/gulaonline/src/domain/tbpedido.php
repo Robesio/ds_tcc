@@ -103,12 +103,12 @@
 		}
         
 
-		function read($idpedido) {
-		
+		function read($idpedido) {		
 			$result = array();
 
 			try {
 				$query = "SELECT * FROM tbpedido WHERE idpedido = $idpedido";
+
 				$con = new Connection();
 				$resultSet = Connection::getInstance()->query($query);
 				while($row = $resultSet->fetchObject()){
@@ -127,18 +127,16 @@
 				$con = null;
 			}catch(PDOException $e) {
 				$result["err"] = $e->getMessage();
-			}
-			
-			return $result;
-			
+			}			
+			return $result;			
 		}
         
 		function readAll() {
 			$result = array();
 			try {
 				$query = "SELECT * FROM tbpedido";
-				$con = new Connection();
 
+				$con = new Connection();
 				$resultSet = Connection::getInstance()->query($query);
 
 				while($row = $resultSet->fetchObject()){
@@ -159,7 +157,6 @@
 			}catch(PDOException $e) {
 				$result["err"] = $e->getMessage();
 			}
-
 			return $result;
 		}
 		
@@ -189,9 +186,7 @@
 			}catch(PDOException $e) {
 				$result["err"] = $e->getMessage();
 			}
-
-			return $result;
-			
+			return $result;			
 		}
 
 		function delete($idpedido) {
@@ -201,7 +196,6 @@
 				$query = "DELETE FROM tbpedido WHERE idpedido = $idpedido";
 
 				$con = new Connection();
-
 				if(Connection::getInstance()->exec($query) >= 1){
 					$result["msg"] = "Id removido com sucesso! ";
 				}else {
@@ -211,10 +205,7 @@
 				$con = null;
 			}catch(PDOException $e) {
 				$result["err"] = $e->getMessage();
-			}
-			
-			return $result;
-			
-		}
-		
+			}			
+			return $result;			
+		}		
 	}

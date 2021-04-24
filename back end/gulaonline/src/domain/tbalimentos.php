@@ -147,10 +147,10 @@
 			$descricao = $ali->getDescricao();
 			$qtd = $ali->getQtd();
 			$preco = $ali->getPreco();
-			//$img = $ali->getImg();
+			$img = $ali->getImg();
 			
 			try {
-				$query = "UPDATE tbalimentos SET nomeali = '$nomeali', descricao = '$descricao', qtd = '$qtd', preco = '$preco' WHERE idali = $idali";
+				$query = "UPDATE tbalimentos SET nomeali = '$nomeali', descricao = '$descricao', qtd = '$qtd', preco = '$preco', img = '$img' WHERE idali = $idali";
 
 				$con = new Connection();
 				$status = Connection::getInstance()->prepare($query);

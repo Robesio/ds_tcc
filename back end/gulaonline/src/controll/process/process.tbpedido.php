@@ -13,7 +13,6 @@
 			} else {
 				$result = $td->read($arr["idpedido"]);
 			}
-			//$result = "use to result to DAO";
 			http_response_code(200);
 			echo json_encode($result);
 		}
@@ -28,7 +27,6 @@
 		    $tbpedido->setRuacli($arr["ruacli"]);
 		    $tbpedido->setNumerocli($arr["numerocli"]);
 		    $tbpedido->setBairrocli($arr["bairrocli"]);
-		    //$tbpedido->setDatahora($arr["datahora"]);
 		    $tbpedido->setIdstatus($arr["idstatus"]);
 			$result = $td->create($tbpedido);
 			http_response_code(200);
@@ -38,7 +36,6 @@
 
 		function doPut($arr){
 			$td = new TbpedidoDAO();
-			//$result = "use to result to DAO";
 			$tbpedido = new Tbpedido();
 			$tbpedido->setIdpedido($arr["idpedido"]);
 			$tbpedido->setId_ca($arr["id_ca"]);
