@@ -1,6 +1,18 @@
-No cadastro do alimento não ira ser preciso o input id_ca,
-pegar o id do empreendedor que está logado.
+O usuário comum deverá apenas ver os alimentos referente a empresa que
+escolheu.
 
-Na hora de alterar as informaçoes de um usuário cadastrado, a senha não
-retorna e não adiciona criptografada.
+A alteração do tipo, não é viavel, poder tá alterando o tipo, para alterar o tipo
+terá que restringir todo o acesso que o empreendedor tinha antes, e mais viavel 
+excluir o usuario e criar um novo, se optar por excluir em vez de editar tirar os 
+select das telas.
+
+melhorar na hora de fazer o cadastro, tirar as opções da empresa.
+
+FALTA FAZER O FRONT DO PEDIDO.
+
+
+FALTA FAZER A TBALIMENTO ALETARAR IMG.
+
+
+
 
