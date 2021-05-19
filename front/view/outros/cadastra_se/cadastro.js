@@ -17,7 +17,7 @@ var idti_lo = document.querySelector("#idti_lo");
 var senha = document.querySelector("#senha");
 
 function addUsuario() {
-    let url = "http://localhost/gulaonline/src/controll/routes/route.tbcadastro.php";
+    let url = "http://localhost/front/src/controll/routes/route.tbcadastro.php";
     if (nome.value != "" && cpf.value != "" && fone.value != "" && email.value != "" && senha.value != "") {
         let dados = new FormData();
         dados.append("nome", nome.value);
@@ -35,19 +35,22 @@ function addUsuario() {
         dados.append("senha", senha.value);
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === this.DONE) {
+                alert("Usuário Cadastrado Com Sucesso!");
+                //setTimeout(() => { window.location.reload(); }, 3000);
+                window.location.assign("../login/login.html");
                 let resp = JSON.parse(this.responseText);
                 if (resp.hasOwnProperty("erro")) {
-                    msg.innerHTML = resp.erro;
+                    alert(resp.erro);
                 } else {
-                    msg.innerHTML = "Usuário Criado Com Sucesso!";
+                    alert("Usuário Criado Com Sucesso!");
                 }
-                setTimeout(() => { window.location.reload(); }, 3000);
+                setTimeout(() => { window.location.reload(); }, 3500);
             }
         });
         xhr.open("POST", url);
         xhr.send(dados);
     } else {
-        msg.innerHTML = "Favor preencher todos os campos com *!";
-        setTimeout(() => { msg.innerHTML = "Mensagens do sistema"; }, 3000);
+        alert("Favor preencher todos os campos com *!");
+        setTimeout(() => { msg.innerHTML = "Mensagens do sistema"; }, 3500);
     }
 }

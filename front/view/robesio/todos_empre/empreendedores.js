@@ -1,7 +1,7 @@
 const msg = document.querySelector("#mensagem");
 const xhr = new XMLHttpRequest();
 const tableCadas = document.querySelector("#tbcadastro");
-const urlCadas = "http://localhost/gulaonline/src/controll/routes/";
+const urlCadas = "http://localhost/front/src/controll/routes/";
 
 function carregaUsuarios() {
     fetch(urlCadas + "route.tbcadastro.php?id_ca=0")
@@ -53,7 +53,7 @@ function carregaUsuarios() {
 }
 
 function addUsuario() {
-    let url = "http://localhost/gulaonline/src/controll/routes/route.tbcadastro.php";
+    let url = "http://localhost/front/src/controll/routes/route.tbcadastro.php";
     let nome = document.querySelector("#nome");
     let cpf = document.querySelector("#cpf");
     let fone = document.querySelector("#fone");
@@ -118,7 +118,7 @@ function editUsuario(u) {
 }
 
 function putUsuario(u) {
-    let url = "http://localhost/gulaonline/src/controll/routes/route.tbcadastro.php";
+    let url = "http://localhost/front/src/controll/routes/route.tbcadastro.php";
     let id_ca = u.parentNode.parentNode.cells[0].innerHTML;
     let nome = u.parentNode.parentNode.cells[1].innerHTML;
     let cpf = u.parentNode.parentNode.cells[2].innerHTML;
@@ -269,7 +269,7 @@ function putUsuario(u) {
 }*/
 
 function delUsuario(u) {
-    let url = "http://localhost/gulaonline/src/controll/routes/route.tbcadastro.php";
+    let url = "http://localhost/front/src/controll/routes/route.tbcadastro.php";
     let id_ca = u.parentNode.parentNode.cells[0].innerText;
     let dados = "id_ca=" + id_ca;
     if (window.confirm("Confirma Exclusão do id = " + id_ca + "?")) {

@@ -207,7 +207,6 @@
 					$cond = " WHERE id_ca = $id_ca";
 				}
 				$query = "SELECT * FROM vw_usuario" . $cond;
-
 				//$query = "SELECT * FROM tbcadastro" . $cond;
 
 				$con = new Connection();

@@ -1,7 +1,6 @@
 const msg = document.querySelector("#mensagem");
 const xhr = new XMLHttpRequest();
-//const tableCadas = document.querySelector("#tbcadastro");
-const urlCadas = "http://localhost/gulaonline/src/controll/routes/";
+const urlCadas = "http://localhost/front/src/controll/routes/";
 var nome = document.querySelector("#nome");
 var cpf = document.querySelector("#cpf");
 var fone = document.querySelector("#fone");
@@ -39,7 +38,6 @@ function carregaUsuarios() {
                 linksite.value = val.linksite;
                 senha.value = val.senha;
                 idti_lo.value = val.idti_lo;
-                //tableCadas.appendChild(row);
             });
         })
         .catch(function (error) {
@@ -48,7 +46,7 @@ function carregaUsuarios() {
 }
 
 function editarUsuario() {
-    let url = "http://localhost/gulaonline/src/controll/routes/route.tbcadastro.php";
+    let url = "http://localhost/front/src/controll/routes/route.tbcadastro.php";
     if (nome.value != "" && cpf.value != "" && fone.value != "" && email.value != "" && senha.value != "") {
         let dados = "id_ca=" + localStorage.getItem("id_ca");
         dados += "&nome=" + nome.value;
@@ -66,38 +64,39 @@ function editarUsuario() {
         dados += "&senha=" + senha.value;
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === this.DONE) {
-                console.log(this.responseText);
+                alert("Dados Alterado Com Sucesso!");
                 let resp = JSON.parse(this.responseText);
                 if (resp.hasOwnProperty("erro")) {
                     msg.innerHTML = resp.erro;
                 } else {
-                    msg.innerHTML = "Dados Alterado Com Sucesso!";
+                    // msg.innerHTML = "Dados Alterado Com Sucesso!";
                 }
-                setTimeout(() => { window.location.reload(); }, 3000);
+                //setTimeout(() => { window.location.reload(); }, 3000);
             }
         });
         xhr.open("PUT", url);
         xhr.send(dados);
     } else {
-        msg.innerHTML = "Favor preencher todos os campos com *!";
-        setTimeout(() => { msg.innerHTML = "Mensagens do sistema"; }, 3000);
+        alert("Favor preencher todos os campos com *");
     }
 }
 
 function delUsuario(u) {
-    let url = "http://localhost/gulaonline/src/controll/routes/route.tbcadastro.php";
+    let url = "http://localhost/front/src/controll/routes/route.tbcadastro.php";
     let id_ca = localStorage.getItem("id_ca");
     let dados = "id_ca=" + id_ca;
     if (window.confirm("Confirma Exclusão do id = " + id_ca + "?")) {
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === this.DONE) {
+                alert("Usuário Excluido Com Sucesso!");
+                window.location.assign("../../home_sem_logar.html");
                 let resp = JSON.parse(this.responseText);
                 if (resp.hasOwnProperty("erro")) {
                     msg.innerHTML = resp.erro;
                 } else {
-                    msg.innerHTML = "Usuário Excluido Com Sucesso!";
+                    //msg.innerHTML = "Usuário Excluido Com Sucesso!";
                 }
-                setTimeout(() => { window.location.reload(); }, 5000);
+                //setTimeout(() => { window.location.reload(); }, 5000);
             }
         });
         xhr.open("DELETE", url);

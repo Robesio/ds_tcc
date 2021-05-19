@@ -4,7 +4,7 @@ const msg = document.getElementById("mensagem");
 
 function acessar() {
     let xhr = new XMLHttpRequest();
-    let url = "http://localhost/gulaonline/src/controll/routes/route.tblogins.php";
+    let url = "http://localhost/front/src/controll/routes/route.tblogins.php";
     let dados = new FormData();
     if (email.value != "" && senha.value != "" || senha.value == "") {
         dados.append("email", email.value);

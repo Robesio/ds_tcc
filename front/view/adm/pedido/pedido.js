@@ -1,7 +1,7 @@
 const msg = document.querySelector("#mensagem");
 const xhr = new XMLHttpRequest();
 const tablePedido = document.querySelector("#tbped"); // O mesmo nome de id que está aqui tem que estar no HTML ref 1.
-const urlPed = "http://localhost/gulaonline/src/controll/routes/route.tbpedido.php"; //
+const urlPed = "http://localhost/front/src/controll/routes/route.tbpedido.php"; //
 
 function carregaPedidos() {
     fetch(urlPed + "?id_ca=" + localStorage.getItem("id_ca"))
@@ -77,14 +77,14 @@ function addPedido() {
 }
 
 function editPedido(a) {
-    a.parentNode.parentNode.cells[2].setAttribute("contentEditable", "true");
     a.parentNode.parentNode.cells[3].setAttribute("contentEditable", "true");
     a.parentNode.parentNode.cells[4].setAttribute("contentEditable", "true");
     a.parentNode.parentNode.cells[5].setAttribute("contentEditable", "true");
     a.parentNode.parentNode.cells[6].setAttribute("contentEditable", "true");
     a.parentNode.parentNode.cells[7].setAttribute("contentEditable", "true");
     a.parentNode.parentNode.cells[8].setAttribute("contentEditable", "true");
-    a.parentNode.parentNode.cells[9].innerHTML = "<button onclick='putPedido(this)'>Enviar</button>";
+    a.parentNode.parentNode.cells[9].setAttribute("contentEditable", "true");
+    a.parentNode.parentNode.cells[10].innerHTML = "<button onclick='putPedido(this)'>Enviar</button>";
 }
 
 function putPedido(a) {

@@ -1,7 +1,7 @@
 const msg = document.querySelector("#mensagem");
 const xhr = new XMLHttpRequest();
 const tablePedido = document.querySelector("#tbped"); // O mesmo nome de id que está aqui tem que estar no HTML ref 1.
-const urlPed = "http://localhost/gulaonline/src/controll/routes/route.tbpedido.php"; //
+const urlPed = "http://localhost/front/src/controll/routes/route.tbpedido.php"; //
 
 function carregaPedidos() {
     fetch(urlPed + "?idpedido=0")
