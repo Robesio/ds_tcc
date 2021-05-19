@@ -9,25 +9,21 @@ import { EmpresasService } from 'src/app/services/empresas.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
-  //emm: Empresas[];
+  emm: Empresas[];
 
-  constructor() { }
+  constructor(public empresasService: EmpresasService) { }
 
   ngOnInit() {
-  }
-  /*ionViewDidLoad() {
-    let empresas: Empresas = { linksite: "" }
-    this.empresasService.get(empresas).subscribe(
-      (resposta: Empresas[]) => {
-        this.emm = resposta;
-        for (let i = 0; i < this.emm.length; i++) {
-          this.valorTotal += parseFloat(this.esss[i].valor);
-        }
+    let empresa: Empresas = { linksite: "Baronesa" }
+    this.empresasService.get(empresa).subscribe(
+      (resposta: any) => {
+        //this.emm = resposta;
+        this.emm = resposta.filter(d => d.linksite != null);
+        console.log(this.emm);
       },
       (error) => {
-        console.log(error)
+        console.log(error);
       }
     );
-  }*/
-
+  }
 }

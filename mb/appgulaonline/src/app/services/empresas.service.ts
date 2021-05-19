@@ -8,8 +8,8 @@ export class EmpresasService {
 
     constructor(public HttpClient: HttpClient) { }
 
-    get(empresas: Empresas) {
-        var url = URLBASE.urlBase + "/route.tbcadastro.php?id_ca=" + empresas.linksite;
-        return this.HttpClient.get<Empresas[]>(url);
+    get(empresa: Empresas) {
+        var url = URLBASE.urlBase + "/route.tbcadastro.php?id_ca=" + empresa.linksite;
+        return this.HttpClient.get(url);
     }
 }
