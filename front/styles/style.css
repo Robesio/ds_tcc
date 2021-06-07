@@ -1,0 +1,47 @@
+  .iconimgs {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .iconimg {
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: dashed 2px #000;
+    cursor: pointer;
+  }
+
+  .iconimg:hover {
+    border-style: solid;
+  }
+
+  .iconimg img {
+    width: 250px;
+    height: 200px;
+    border: solid 2px #000000;
+  }
+
+  .iconimg p {
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+
+  .contact img {
+    width: 60px;
+  }
+
+  .carousel-item {
+    width: 72vw;
+    height: 40vh;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

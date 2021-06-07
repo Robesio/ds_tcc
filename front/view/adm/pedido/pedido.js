@@ -23,6 +23,7 @@ function carregaPedidos() {
                 row.innerHTML += `<td>${val.bairrocli}</td>`;
                 row.innerHTML += `<td>${val.datahora}</td>`;
                 row.innerHTML += `<td>${val.idstatus}</td>`;
+                row.innerHTML += `<td>${val.qtdcli}</td>`;
                 row.innerHTML += `<td style="padding:3px"><button onclick='editPedido(this)'><i class="fa fa-pencil" aria-hidden="true"></i></button><button onclick='delPedido(this)'><i class="fa fa-trash-o" aria-hidden="true"></i></button></td></tr>`;
                 tablePedido.appendChild(row);
             });

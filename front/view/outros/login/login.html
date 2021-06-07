@@ -13,77 +13,9 @@
     <link rel="stylesheet" href="../../../styles/background.css">
     <link rel="stylesheet" href="../../../styles/root.css">
     <link rel="stylesheet" href="../../../styles/header.css">
+    <link rel="stylesheet" href="../../../styles/style.css">
     <link rel="stylesheet" href="./login.css">
 
-    <style>
-        .iconimgs {
-            margin: 50px;
-            display: grid;
-            grid-template-columns: auto auto auto;
-        }
-
-        .iconimg {
-            margin: 20px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            border: dashed 2px #000;
-            cursor: pointer;
-        }
-
-        .iconimg:hover {
-            border-style: solid;
-        }
-
-        .iconimg img {
-            width: 250px;
-            height: 200px;
-            border: solid 2px #000000;
-        }
-
-        .iconimg p {
-            margin-top: 20px;
-            text-transform: uppercase;
-        }
-
-        .contact img {
-            width: 60px;
-        }
-
-
-
-        @media (max-width: 950px) {
-            .iconimgs {
-                margin: 20px;
-            }
-
-            .iconimg {
-                margin: 10px;
-                padding: 10px;
-            }
-
-            .iconimg img {
-                width: 150px;
-                height: 120px;
-                ;
-                border: solid 2px #000000;
-            }
-
-            .iconimg p {
-                margin-top: 20px;
-            }
-        }
-
-        .icon-contact {
-            background-color: white;
-            border-radius: 50%;
-            border: solid 2px white;
-            margin: 5px;
-        }
-    </style>
 </head>
 
 <body>
@@ -109,7 +41,7 @@
                     <input type="password" placeholder="Digite Senha Cadastrada" required id="senha">
                 </div><br>
                 <input class="btn" type="button" value="Acessar" onclick="acessar()">
-                <br />
+                <br><br>
                 <a id="abacate" href="../../outros/cadastra_se/cadastro.html">Cadastra-se</a><br><br>
                 <div>
                     <p id="mensagem">Mensagens do Sistema</p>
@@ -121,7 +53,7 @@
         <div class="contact"><br><br>
             <center>
                 <h2><b>Contatos</b></h2>
-                <h4><b>Telefone:</b> (00) 00000-0000&nbsp&nbsp&nbsp<b>E-mail:</b> gulaonline@.com</h4><br>
+                <h3><b>Telefone:</b> (19) 3837-6300&nbsp&nbsp&nbsp<b>E-mail:</b> ti.gula@gulaonline.com</h3><br>
                 <a target="_blank" href="https://www.facebook.com" rel="noreferrer"><img
                         src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxNzIgMTcyIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBmb250LWZhbWlseT0ibm9uZSIgZm9udC13ZWlnaHQ9Im5vbmUiIGZvbnQtc2l6ZT0ibm9uZSIgdGV4dC1hbmNob3I9Im5vbmUiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTogbm9ybWFsIj48cGF0aCBkPSJNMCwxNzJ2LTE3MmgxNzJ2MTcyeiIgZmlsbD0ibm9uZSI+PC9wYXRoPjxnIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik0zNC45Mzc1LDE2LjEyNWMtMTAuMzcyMDcsMCAtMTguODEyNSw4LjQ0MDQzIC0xOC44MTI1LDE4LjgxMjV2MTAyLjEyNWMwLDEwLjM3MjA3IDguNDQwNDMsMTguODEyNSAxOC44MTI1LDE4LjgxMjVoMTAyLjEyNWMxMC4zNzIwNywwIDE4LjgxMjUsLTguNDQwNDMgMTguODEyNSwtMTguODEyNXYtMTAyLjEyNWMwLC0xMC4zNzIwNyAtOC40NDA0MywtMTguODEyNSAtMTguODEyNSwtMTguODEyNXpNMzQuOTM3NSwyMS41aDEwMi4xMjVjNy40MjIxMiwwIDEzLjQzNzUsNi4wMTUzOCAxMy40Mzc1LDEzLjQzNzV2MTAyLjEyNWMwLDcuNDIyMTIgLTYuMDE1MzgsMTMuNDM3NSAtMTMuNDM3NSwxMy40Mzc1aC0yOS44MzU0NXYtMzUuMDEwOTloMTUuODgzNTRjMS4zMTIyNiwwIDIuNDM1NTUsLTAuOTQ0ODIgMi42NTYwMSwtMi4yNDY1OGwzLjA1NDkzLC0xOC42ODY1MmMwLjI2MjQ1LC0xLjYzNzcgLTAuOTk3MzIsLTMuMTI4NDIgLTIuNjU2MDEsLTMuMTI4NDJoLTE4LjkzODQ4di00LjM0NjE5YzAsLTUuMTAyMDUgMS4wNjAzLC03LjM4MDEzIDcuMzI3NjQsLTcuMzgwMTNoMTIuNTAzMTdjMS40ODAyMiwwIDIuNjg3NSwtMS4xOTY3OCAyLjY4NzUsLTIuNjg3NXYtMTkuNDYzMzhjMCwtMS4zODU3NCAtMS4wMzkzMSwtMi41MzAwMyAtMi40MTQ1NSwtMi42NjY1MWMtMy45OTk3NiwtMC4zOTg5MiAtMTEuOTI1NzgsLTEuMTMzNzkgLTE1LjY0MjA5LC0xLjEzMzc5Yy0xNy4zMDA3OCwwIC0yOC40NzA3LDExLjkwNDc5IC0yOC40NzA3LDMwLjMyODg2djcuMzQ4NjNoLTE2LjAzMDUyYy0xLjQ4MDIyLDAgLTIuNjg3NSwxLjIwNzI4IC0yLjY4NzUsMi42ODc1djE4LjY4NjUyYzAsMS40OTA3MiAxLjIwNzI4LDIuNjg3NSAyLjY4NzUsMi42ODc1aDE2LjAyMDAydjM1LjAxMDk5aC00OC4yNzAwMmMtNy40MjIxMiwwIC0xMy40Mzc1LC02LjAxNTM4IC0xMy40Mzc1LC0xMy40Mzc1di0xMDIuMTI1YzAsLTcuNDIyMTIgNi4wMTUzOCwtMTMuNDM3NSAxMy40Mzc1LC0xMy40Mzc1ek0zMi4yNSwzMi4yNWMtMS40OTA3MiwwIC0yLjY4NzUsMS4yMDcyOCAtMi42ODc1LDIuNjg3NXY1LjM3NWMwLDEuNDgwMjIgMS4xOTY3OCwyLjY4NzUgMi42ODc1LDIuNjg3NWMxLjQ5MDcyLDAgMi42ODc1LC0xLjIwNzI4IDIuNjg3NSwtMi42ODc1di01LjM3NWMwLC0xLjQ4MDIyIC0xLjE5Njc4LC0yLjY4NzUgLTIuNjg3NSwtMi42ODc1ek00NS42ODc1LDMyLjI1Yy0xLjQ5MDcyLDAgLTIuNjg3NSwxLjIwNzI4IC0yLjY4NzUsMi42ODc1djUuMzc1YzAsMS40ODAyMiAxLjE5Njc4LDIuNjg3NSAyLjY4NzUsMi42ODc1YzEuNDkwNzIsMCAyLjY4NzUsLTEuMjA3MjggMi42ODc1LC0yLjY4NzV2LTUuMzc1YzAsLTEuNDgwMjIgLTEuMTk2NzgsLTIuNjg3NSAtMi42ODc1LC0yLjY4NzV6TTU5LjEyNSwzMi4yNWMtMS40OTA3MiwwIC0yLjY4NzUsMS4yMDcyOCAtMi42ODc1LDIuNjg3NXY1LjM3NWMwLDEuNDgwMjIgMS4xOTY3OCwyLjY4NzUgMi42ODc1LDIuNjg3NWMxLjQ5MDcyLDAgMi42ODc1LC0xLjIwNzI4IDIuNjg3NSwtMi42ODc1di01LjM3NWMwLC0xLjQ4MDIyIC0xLjE5Njc4LC0yLjY4NzUgLTIuNjg3NSwtMi42ODc1ek03Mi41NjI1LDMyLjI1Yy0xLjQ5MDcyLDAgLTIuNjg3NSwxLjIwNzI4IC0yLjY4NzUsMi42ODc1djUuMzc1YzAsMS40ODAyMiAxLjE5Njc4LDIuNjg3NSAyLjY4NzUsMi42ODc1YzEuNDkwNzIsMCAyLjY4NzUsLTEuMjA3MjggMi42ODc1LC0yLjY4NzV2LTUuMzc1YzAsLTEuNDgwMjIgLTEuMTk2NzgsLTIuNjg3NSAtMi42ODc1LC0yLjY4NzV6TTg2LDMyLjI1Yy0xLjQ5MDcyLDAgLTIuNjg3NSwxLjIwNzI4IC0yLjY4NzUsMi42ODc1djUuMzc1YzAsMS40ODAyMiAxLjE5Njc4LDIuNjg3NSAyLjY4NzUsMi42ODc1YzEuNDkwNzIsMCAyLjY4NzUsLTEuMjA3MjggMi42ODc1LC0yLjY4NzV2LTUuMzc1YzAsLTEuNDgwMjIgLTEuMTk2NzgsLTIuNjg3NSAtMi42ODc1LC0yLjY4NzV6TTk5LjQzNzUsMzIuMjVjLTEuNDkwNzIsMCAtMi42ODc1LDEuMjA3MjggLTIuNjg3NSwyLjY4NzV2NS4zNzVjMCwxLjQ4MDIyIDEuMTk2NzgsMi42ODc1IDIuNjg3NSwyLjY4NzVjMS40OTA3MiwwIDIuNjg3NSwtMS4yMDcyOCAyLjY4NzUsLTIuNjg3NXYtNS4zNzVjMCwtMS40ODAyMiAtMS4xOTY3OCwtMi42ODc1IC0yLjY4NzUsLTIuNjg3NXpNMTEyLjg3NSwzMi4yNWMtMS40OTA3MiwwIC0yLjY4NzUsMS4yMDcyOCAtMi42ODc1LDIuNjg3NXY1LjM3NWMwLDEuNDgwMjIgMS4xOTY3OCwyLjY4NzUgMi42ODc1LDIuNjg3NWMxLjQ5MDcyLDAgMi42ODc1LC0xLjIwNzI4IDIuNjg3NSwtMi42ODc1di01LjM3NWMwLC0xLjQ4MDIyIC0xLjE5Njc4LC0yLjY4NzUgLTIuNjg3NSwtMi42ODc1ek0xMjYuMzEyNSwzMi4yNWMtMS40OTA3MiwwIC0yLjY4NzUsMS4yMDcyOCAtMi42ODc1LDIuNjg3NXY1LjM3NWMwLDEuNDgwMjIgMS4xOTY3OCwyLjY4NzUgMi42ODc1LDIuNjg3NWMxLjQ5MDcyLDAgMi42ODc1LC0xLjIwNzI4IDIuNjg3NSwtMi42ODc1di01LjM3NWMwLC0xLjQ4MDIyIC0xLjE5Njc4LC0yLjY4NzUgLTIuNjg3NSwtMi42ODc1ek0xMzkuNzUsMzIuMjVjLTEuNDkwNzIsMCAtMi42ODc1LDEuMjA3MjggLTIuNjg3NSwyLjY4NzV2NS4zNzVjMCwxLjQ4MDIyIDEuMTk2NzgsMi42ODc1IDIuNjg3NSwyLjY4NzVjMS40OTA3MiwwIDIuNjg3NSwtMS4yMDcyOCAyLjY4NzUsLTIuNjg3NXYtNS4zNzVjMCwtMS40ODAyMiAtMS4xOTY3OCwtMi42ODc1IC0yLjY4NzUsLTIuNjg3NXpNMTExLjY4ODcyLDU5LjEyNWM0LjExNTIzLDAgOC4zNjY5NCwwLjI0MTQ2IDEyLjY4MTY0LDAuNzI0MzZ2MTQuNDc2ODFoLTkuODA1MThjLTExLjM5MDM4LDAgLTEyLjcwMjY0LDcuMjc1MTUgLTEyLjcwMjY0LDEyLjc1NTEzdjkuNzIxMTloMjEuMTQzMDdsLTIuMTgzNTksMTMuMzExNTJoLTE4Ljk2OTk3djQwLjM4NTk5aC0xMy4yNjk1M3YtNDAuMzg1OTloLTE4LjcwNzUydi0xMy4zMTE1MmgxOC43MTgwMnYtMTIuNzIzNjNjMCwtMTUuNjIxMDkgOC42MjkzOSwtMjQuOTUzODYgMjMuMDk1NywtMjQuOTUzODZ6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4="
                         alt="facebookIcon" /></a>

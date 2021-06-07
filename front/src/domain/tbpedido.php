@@ -11,6 +11,14 @@
 		var $bairrocli;
 		var $datahora;
 		var $idstatus;
+		var $qtdcli;
+
+		function getQtdcli(){
+			return $this->qtdcli;
+		}
+		function setQtdcli($qtdcli){
+			$this->qtdcli = $qtdcli;
+		}
 
 		function getIdpedido(){
 			return $this->idpedido;
@@ -110,7 +118,6 @@
 			return $result;
 		}
         
-
 		function read($id_ca) {		
 			$result = array();
 
@@ -131,6 +138,7 @@
 					$tbpedido->setBairrocli($row->bairrocli);
 					$tbpedido->setDatahora($row->datahora);
 					$tbpedido->setIdstatus($row->idstatus);
+					$tbpedido->setQtdcli($row->qtdcli);	
 					$result[] = $tbpedido;
 				}
 				$con = null;
@@ -139,12 +147,12 @@
 			}			
 			return $result;			
 		}
-        
+        /*
 		function readAll() {
 			$result = array();
 			try {
-				$query = "SELECT * FROM tbpedido";
-
+				$query = "SELECT * FROM vw_pedidos";
+				var_dump($query);
 				$con = new Connection();
 				$resultSet = Connection::getInstance()->query($query);
 
@@ -159,6 +167,7 @@
 					$tbpedido->setBairrocli($row->bairrocli);
 					$tbpedido->setDatahora($row->datahora);
 					$tbpedido->setIdstatus($row->idstatus);	
+					$tbpedido->setQtdcli($row->qtdcli);	
 					$result[] = $tbpedido;
 				}
 
@@ -167,7 +176,7 @@
 				$result["err"] = $e->getMessage();
 			}
 			return $result;
-		}
+		}*/
 		
 		function update($ped) {
 			
