@@ -44,6 +44,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+<<<<<<< HEAD
   }
 
   @media (max-width: 950px) {
@@ -77,4 +78,6 @@
 
   .login_input_sweet input {
     margin: 10px;
+=======
+>>>>>>> 55bfaf9108ca6a06adc4658c3c90e5d354ba9881
   }

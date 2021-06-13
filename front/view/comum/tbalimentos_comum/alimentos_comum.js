@@ -15,8 +15,13 @@ function carregaAlimentos() {
             data.forEach((val) => {
                 console.log(val);
                 let row = document.createElement("tr");
+<<<<<<< HEAD
                 //row.innerHTML += `<td>${val.idali}</td>`;
                 //row.innerHTML += `<td>${val.id_ca}</td>`;
+=======
+                row.innerHTML += `<td>${val.idali}</td>`;
+                row.innerHTML += `<td>${val.id_ca}</td>`;
+>>>>>>> 55bfaf9108ca6a06adc4658c3c90e5d354ba9881
                 row.innerHTML += `<td>${val.nomeali}</td>`;
                 row.innerHTML += `<td>${val.descricao}</td>`;
                 row.innerHTML += `<td>${val.qtd}</td>`;
