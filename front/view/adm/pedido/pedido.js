@@ -23,6 +23,7 @@ function carregaPedidos() {
                 row.innerHTML += `<td>${val.bairrocli}</td>`;
                 row.innerHTML += `<td>${val.datahora}</td>`;
                 row.innerHTML += `<td>${val.idstatus}</td>`;
+                row.innerHTML += `<td>${val.qtdcli}</td>`;
                 row.innerHTML += `<td style="padding:3px"><button onclick='editPedido(this)'><i class="fa fa-pencil" aria-hidden="true"></i></button><button onclick='delPedido(this)'><i class="fa fa-trash-o" aria-hidden="true"></i></button></td></tr>`;
                 tablePedido.appendChild(row);
             });
@@ -77,6 +78,7 @@ function addPedido() {
 }
 
 function editPedido(a) {
+    a.parentNode.parentNode.cells[2].setAttribute("contentEditable", "true");
     a.parentNode.parentNode.cells[3].setAttribute("contentEditable", "true");
     a.parentNode.parentNode.cells[4].setAttribute("contentEditable", "true");
     a.parentNode.parentNode.cells[5].setAttribute("contentEditable", "true");
@@ -84,7 +86,8 @@ function editPedido(a) {
     a.parentNode.parentNode.cells[7].setAttribute("contentEditable", "true");
     a.parentNode.parentNode.cells[8].setAttribute("contentEditable", "true");
     a.parentNode.parentNode.cells[9].setAttribute("contentEditable", "true");
-    a.parentNode.parentNode.cells[10].innerHTML = "<button onclick='putPedido(this)'>Enviar</button>";
+    a.parentNode.parentNode.cells[10].setAttribute("contentEditable", "true");
+    a.parentNode.parentNode.cells[11].innerHTML = "<button onclick='putPedido(this)'>Enviar</button>";
 }
 
 function putPedido(a) {

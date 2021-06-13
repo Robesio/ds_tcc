@@ -32,7 +32,7 @@
 		function doPost($arr){
 			$td = new TbcadastroDAO();
 			$cadastro = new Tbcadastro();
-			$cadastro->setId_ca($arr["id_ca"]);
+			//$cadastro->setId_ca($arr["id_ca"]);
 			$cadastro->setNome($arr["nome"]);
 			$cadastro->setCpf($arr["cpf"]);
 			$cadastro->setFone($arr["fone"]);

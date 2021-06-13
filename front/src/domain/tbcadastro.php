@@ -120,7 +120,7 @@
 	class TbcadastroDAO {
 		function create($tbcadastro) {
 			$result = array();
-			$id_ca = $tbcadastro->getId_ca();
+			//$id_ca = $tbcadastro->getId_ca();
 			$nome = $tbcadastro->getNome();
 			$cpf = $tbcadastro->getCpf();
 			$fone = $tbcadastro->getFone();

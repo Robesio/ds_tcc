@@ -34,10 +34,10 @@ function carregaUsuarios() {
                 numero.value = val.numero;
                 cidade.value = val.cidade;
                 uf.value = val.uf;
-                cnpj.value = val.cnpj;
-                linksite.value = val.linksite;
+                // cnpj.value = val.cnpj;
+                // linksite.value = val.linksite;
                 senha.value = val.senha;
-                idti_lo.value = val.idti_lo;
+                //idti_lo.value = val.idti_lo;
             });
         })
         .catch(function (error) {
@@ -57,14 +57,15 @@ function editarUsuario() {
         dados += "&numero=" + numero.value;
         dados += "&cidade=" + cidade.value;
         dados += "&uf=" + uf.value;
-        dados += "&cnpj=" + cnpj.value;
-        dados += "&linksite=" + linksite.value;
+        //dados += "&cnpj=" + cnpj.value;
+        // dados += "&linksite=" + linksite.value;
         dados += "&email=" + email.value;
-        dados += "&idti_lo=" + idti_lo.value;
+        //dados += "&idti_lo=" + idti_lo.value;
         dados += "&senha=" + senha.value;
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === this.DONE) {
                 alert("Dados Alterado Com Sucesso!");
+                window.location.assign("./perfil_comum.html");
                 let resp = JSON.parse(this.responseText);
                 if (resp.hasOwnProperty("erro")) {
                     msg.innerHTML = resp.erro;

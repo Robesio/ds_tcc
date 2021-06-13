@@ -13,9 +13,9 @@ function carregarAliEmpre() {
         })
         .then(function (data) {
             data.forEach((val) => {
-                let row = document.createElement("tr");
+                let row = document.createElement("div");
                 localStorage.setItem("id", val.id_ca);
-                row.innerHTML = `<tr><td style="padding:13px"><a href='./comum/tbalimentos_comum/alimentos_empre.html'>${val.linksite}</a></td></tr>`;
+                row.innerHTML = `<div><center><img src="../resources/icons/logo.png" width="86"><center><a href='./comum/tbalimentos_comum/alimentos_empre.html?id=${val.id_ca}'>${val.linksite}</a><div><br>`;
                 if (val.linksite != null) {
                     tableCadas.appendChild(row);
                 }

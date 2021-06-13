@@ -115,3 +115,8 @@ CREATE VIEW vw_pedidos as
 SELECT p.id_ca, p.idpedido, h.idali, p.nomecli, p.fonecli, ruacli, p.numerocli, p.bairrocli, p.datahora, p.idstatus, h.qtdcli
 FROM tbpedido p LEFT JOIN tbali_has_tbped h on (p.idpedido = h.idpedido);
 
+
+CREATE VIEW vw_valortotal as
+SELECT tbpedido.id_ca, tbpedido.idpedido, tbalimentos.idali, nomecli, fonecli, ruacli, numerocli, bairrocli, datahora, qtdcli, idstatus,
+(qtdcli * preco) AS valortotal FROM tbpedido INNER JOIN tbalimentos ON tbalimentos.id_ca = tbpedido.id_ca INNER JOIN
+tbali_has_tbped ON  tbpedido.idpedido = tbali_has_tbped.idpedido;

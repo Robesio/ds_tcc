@@ -22,9 +22,9 @@ function carregaAlimentos() {
                 row.innerHTML += `<td>${val.qtd}</td>`;
                 row.innerHTML += `<td>${val.preco}</td>`;
                 if (val.img == null) {
-                    val.img = "../../outros/assets/error.png";
+                    val.img = "../../outros/assets/sd.png";
                 }
-                row.innerHTML += `<td><img src="${val.img}" width="50"></td></tr>`;
+                row.innerHTML += `<td><img src="${val.img}" width="170"></td></tr>`;
                 row.innerHTML += `<td style="padding:3px"><button onclick='editAlimento(this)'><i class="fa fa-pencil" aria-hidden="true"></i></button><button onclick='delAlimento(this)'><i class="fa fa-trash-o" aria-hidden="true"></i></button></td></tr>`;
                 tableAli.appendChild(row);
             });

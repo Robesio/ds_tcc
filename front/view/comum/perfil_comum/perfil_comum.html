@@ -13,92 +13,8 @@
   <link rel="stylesheet" href="../../../styles/background.css">
   <link rel="stylesheet" href="../../../styles/header.css">
   <link rel="stylesheet" href="../../../styles/root.css">
-  <link rel="stylesheet" href="/styles/dosis.css">
+  <link rel="stylesheet" href="../../../styles/style.css">
   <link rel="stylesheet" type="text/css" href="./perfil_comum.css" />
-
-
-  <style>
-    .iconimgs {
-      margin: 50px;
-      display: grid;
-      grid-template-columns: auto auto auto;
-    }
-
-    .iconimg {
-      margin: 20px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      border: dashed 2px #000;
-      cursor: pointer;
-    }
-
-    .iconimg:hover {
-      border-style: solid;
-    }
-
-    .iconimg img {
-      width: 250px;
-      height: 200px;
-      border: solid 2px #000000;
-    }
-
-    .iconimg p {
-      margin-top: 20px;
-      text-transform: uppercase;
-    }
-
-    .contact img {
-      width: 60px;
-    }
-
-    .carousel-item {
-      width: 72vw;
-      height: 40vh;
-    }
-
-    .carousel-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @media (max-width: 950px) {
-      .iconimgs {
-        margin: 20px;
-      }
-
-      .iconimg {
-        margin: 10px;
-        padding: 10px;
-      }
-
-      .iconimg img {
-        width: 150px;
-        height: 120px;
-        ;
-        border: solid 2px #000000;
-      }
-
-      .iconimg p {
-        margin-top: 20px;
-      }
-    }
-
-    .icon-contact {
-      background-color: white;
-      border-radius: 50%;
-      border: solid 2px white;
-      margin: 5px;
-    }
-
-    .login_input_sweet input {
-      margin: 10px;
-    }
-  </style>
 
 <body onload="carregaUsuarios()">
   <header>
@@ -113,7 +29,7 @@
   <main>
     <Section id="conteudo">
       <fieldset>
-        <h1>Perfil Comum</h1>
+        <h1>Perfil</h1>
         <br><br>
         <form action="#" method="post">
 
@@ -140,6 +56,9 @@
               <input type="password" name="senha" id="senha">
             </label>
 
+            <label class="bt">
+              <input type="button" value="Excluir Cadastro" onclick="delUsuario()">
+            </label>
           </fieldset>
 
           <fieldset class="form2">
@@ -164,8 +83,12 @@
             <label>UF<span class="required"></span><br>
               <input type="text" name="uf" id="uf">
             </label>
-          </fieldset>
 
+            <label class="bt">
+              <input type="button" value="Alterar Perfil" onclick="editarUsuario()">
+            </label>
+          </fieldset>
+          <!--
           <fieldset class="form3">
             <legend>Empresa</legend>
 
@@ -180,14 +103,14 @@
             <label>Tipo<span class="required"></span><br><br>
               <input type="text" name="Nome loja" id="idti_lo" disabled>
             </label><br>
-            <br>
-            <label class="bt">
-              <input type="button" value="Alterar Perfil" onclick="editarUsuario()">
-              <br><br>
-              <input type="button" value="Excluir Cadastro" onclick="delUsuario()">
-            </label>
-          </fieldset>
-        </form>
+          <br>
+          <label class="bt">
+            <input type="button" value="Alterar Perfil" onclick="editarUsuario()">
+            <br><br>
+            <input type="button" value="Excluir Cadastro" onclick="delUsuario()">
+          </label>-->
+      </fieldset>
+      </form>
       </fieldset>
   </main> <br><br><br><br>
   <footer>

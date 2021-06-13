@@ -38,6 +38,7 @@ function addUsuario() {
                 alert("Usuário Cadastrado Com Sucesso!");
                 //setTimeout(() => { window.location.reload(); }, 3000);
                 window.location.assign("../login/login.html");
+                //console.log(this.responseText);
                 let resp = JSON.parse(this.responseText);
                 if (resp.hasOwnProperty("erro")) {
                     alert(resp.erro);
