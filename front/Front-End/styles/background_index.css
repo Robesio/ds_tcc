@@ -30,7 +30,6 @@ p{
 footer {
     background-color: #000039;
     color: white;
-    margin-top: 120px;
 }
 
 header {
@@ -113,7 +112,7 @@ h3{
 }
 
 .contact img{
-    width: 60px;
+    width: 90px;
 }
 
 .icon-contact {
@@ -123,9 +122,9 @@ h3{
     margin: 5px;
 }
 .fundo_cont{
-    background-color: #000;
-    /*background-image: url('../resources/img/k.jpg');*/
     color: #ffffff;
+    background-color: #65657e63;
+    opacity: 9;
 }
 
 .fundo_cont a{
@@ -137,15 +136,17 @@ h3{
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 5px;
 }
 
 .container p{
-    width: 450px;
+    width: 490px;
+    margin: 20px;
     text-align: justify;
 }
 
 .container img{
-    width: 90px;
+    width: 40px;
 }
 
 .container #icone{
@@ -153,7 +154,7 @@ h3{
 }
 
 .container .images{
-    margin: 90px;
+    margin: 50px;
 }
 .container .tutorial {
     margin: 20px;

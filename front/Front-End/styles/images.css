@@ -26,7 +26,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: dashed 2px #000000;
+    border: dashed 2px #ffffff;
 }
 
 .container .element img {
@@ -35,24 +35,16 @@
     border-width: 100%;
 }
 
-.container .back1 {
-    background-color: #ff9aa2;
-}
-
 .container .back2 {
-    background-color: #ffdac1;
+    background-color: #cccccc8c;
 }
 
 .container .back3 {
-    background-color: #e2f0cb;
+    background-color: #cccccc8c;
 }
 
 .container .back4 {
-    background-color: #b5ead7;
-}
-
-.container .back5 {
-    background-color: #c7ceea;
+    background-color: #cccccc8c;
 }
 
 .benditoP {
